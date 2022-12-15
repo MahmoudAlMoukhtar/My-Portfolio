@@ -1,12 +1,13 @@
 import {Link} from "react-router-dom";
 import {AiFillLinkedin, AiFillGithub, AiFillFacebook} from "react-icons/ai";
+import {startLogin, startLogout} from "../redux/actions/auth";
+import {firebase, googleAuthProvider} from "../firebase/firebase";
 const Navbar = () => {
   return (
     <header className="flex flex-col justify-center items-center w-[100%] py-4 gap-4 sm:flex-row sm:justify-between sm:gap-0">
       <nav className="flex justify-center sm:justify-start gap-6 md:gap-8 w-[100%] sm:w-1/3">
         <Link to="/">Home</Link>
         <Link to="/portfolio">Portfolio</Link>
-        <Link to="/dashboard">Dashboard</Link>
       </nav>
       <div className="text-4xl w-1/3 flex justify-center hidden absolute sm:flex sm:static">
         M

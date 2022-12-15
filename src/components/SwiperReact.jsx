@@ -5,12 +5,11 @@ import {Swiper, SwiperSlide} from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 import "swiper/swiper.min.css";
 
-export default () => {
+const SwiperReact = () => {
   SwiperCore.use([Autoplay]);
   return (
     <Swiper
-      spaceBetween={100}
-      slidesPerView={3}
+      slidesPerView={4}
       autoplay={{
         delay: 800,
         pauseOnMouseEnter: false,
@@ -19,7 +18,7 @@ export default () => {
       speed={200}
       loop={true}
       onSlideChange={() => console.log("change")}
-      className="w-full"
+      className="w-full flex justify-center items-center"
     >
       <SwiperSlide className="flex justify-center">
         <SiUpwork size={50} />
@@ -36,3 +35,4 @@ export default () => {
     </Swiper>
   );
 };
+export default SwiperReact;

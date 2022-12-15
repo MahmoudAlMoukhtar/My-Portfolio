@@ -3,16 +3,15 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import {BrowserRouter} from "react-router-dom";
 import "./index.css";
-import "./firebase/firebase";
 import "animate.css";
 import configureStore from "./redux/store/configuerStore";
 import {startSetProjectsAction} from "./redux/actions/projectsActions";
 import {Provider} from "react-redux";
 import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
 import ParticlesComponent from "./components/Particles";
-import createHistory from "history/createBrowserHistory";
+import {firebase} from "./firebase/firebase";
+import {login, logout} from "./redux/actions/auth";
 
-const history = createHistory();
 const store = configureStore();
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -24,7 +23,7 @@ root.render(
     <ParticlesComponent />
   </React.Fragment>
 );
-store.dispatch(startSetProjectsAction()).then(() => {
+/* store.dispatch(startSetProjectsAction()).then(() => {
   root.render(
     <BrowserRouter>
       <Provider store={store}>
@@ -33,4 +32,37 @@ store.dispatch(startSetProjectsAction()).then(() => {
     </BrowserRouter>
   );
   console.log(store.getState());
+}); */
+
+let hasRendered = false;
+const renderApp = () => {
+  if (!hasRendered) {
+    root.render(
+      <BrowserRouter>
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </BrowserRouter>
+    );
+    hasRendered = true;
+  }
+};
+
+firebase.auth().onAuthStateChanged(user => {
+  if (user) {
+    console.log("log in");
+    console.log(user.uid);
+    console.log(user.displayName);
+    console.log(user.photoURL);
+
+    //console.log(user.updatePassword);
+    store.dispatch(login(user.uid, user.displayName, user.photoURL));
+    store.dispatch(startSetProjectsAction()).then(() => {
+      renderApp();
+    });
+  } else {
+    console.log("log out");
+    store.dispatch(logout());
+    renderApp();
+  }
 });

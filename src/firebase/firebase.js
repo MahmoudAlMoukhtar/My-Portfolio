@@ -13,7 +13,8 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
-
+const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+export {firebase, googleAuthProvider, database as default};
 /* database.ref("").push({
   image: "/calendar.png",
   description: "klasjfdlkhloremasdafdassghyths",
@@ -30,4 +31,3 @@ const database = firebase.database();
   demoLink: "http://notes-app-mahmoud.netlify.app/",
 });
  */
-export default database;

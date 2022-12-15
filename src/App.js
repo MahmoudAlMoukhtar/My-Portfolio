@@ -4,7 +4,8 @@ import ParticlesComponent from "./components/Particles";
 import DashboardPage from "./pages/Dashboard";
 import HomePage from "./pages/Home";
 import PortfolioPage from "./pages/Portfolio";
-
+import PrivaiteRoute from "./PrivaiteRoute";
+import LoginPage from "./pages/Login/index";
 function App() {
   return (
     <div className="App bg-slate-900 text-white">
@@ -13,7 +14,15 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/portfolio" element={<PortfolioPage />} />
-          <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/Login" element={<LoginPage />} />
+          <Route
+            path="/dashbord"
+            element={
+              <PrivaiteRoute>
+                <DashboardPage />
+              </PrivaiteRoute>
+            }
+          />
         </Routes>
       </main>
       <ParticlesComponent />

@@ -5,6 +5,8 @@ import {
   startRemoveProjectAction,
 } from "../../redux/actions/projectsActions";
 import {MdOutlineRemoveCircle} from "react-icons/md";
+import database, {firebase} from "../../firebase/firebase";
+
 const ItemProjectsDashpoard = ({project, removeProject}) => {
   const {image, title, id} = project;
   console.log(id);
@@ -25,8 +27,17 @@ const DashboardPage = ({projects, addProjectAction, removeProject}) => {
   const [githubLink, setGithubLink] = useState("");
   const [demoLink, setDemoLink] = useState("");
   const [image, setImage] = useState("");
+
   return (
     <div className="flex flex-col gap-16 w-full items-center bg-white text-black z-40 p-8">
+      <button
+        onClick={() => {
+          console.log("logout");
+          firebase.auth().signOut();
+        }}
+      >
+        LOGOUT
+      </button>
       <form className="flex flex-col gap-4 justify-between items-center text-black">
         <label className="w-[100%] flex justify-between gap-6 ">
           Title Project

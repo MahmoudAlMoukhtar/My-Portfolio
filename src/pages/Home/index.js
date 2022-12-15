@@ -6,6 +6,10 @@ import {
   SiExpress,
   SiMongodb,
   SiCsharp,
+  SiUpwork,
+  SiFreelancer,
+  SiLinkedin,
+  SiFacebook,
 } from "react-icons/si";
 import {FaReact, FaNodeJs} from "react-icons/fa";
 import {DiCss3Full} from "react-icons/di";
@@ -130,10 +134,30 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col gap-8 justify-center items-center text-2xl font-semibold z-40 bg-slate-900 p-6 w-[60%]">
+      <div className="text-2xl text-center font-semibold z-40 bg-slate-900 p-6 w-full">
         <h2>You can find me on</h2>
       </div>
-      <SwiperReact />
+      <div className="flex justify-between w-full px-4 sm:px-16 lg:px-40">
+        <SiUpwork
+          size={50}
+          className="hover:scale-110 transition duration-100 cursor-pointer"
+        />
+
+        <SiFreelancer
+          size={50}
+          className="hover:scale-110 transition duration-100 cursor-pointer"
+        />
+
+        <SiLinkedin
+          size={50}
+          className="hover:scale-110 transition duration-100 cursor-pointer"
+        />
+
+        <SiFacebook
+          size={50}
+          className="hover:scale-110 transition duration-100 cursor-pointer"
+        />
+      </div>
     </div>
   );
 };

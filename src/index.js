@@ -55,14 +55,34 @@ firebase.auth().onAuthStateChanged(user => {
 
     //console.log(user.updatePassword);
     store.dispatch(login(user.uid, user.displayName, user.photoURL));
-    store.dispatch(startSetProjectsAction()).then(() => {
-      renderApp();
-    });
+    store
+      .dispatch(startSetProjectsAction())
+      .then(() => {
+        renderApp();
+      })
+      .catch(() => {
+        console.log("errorrrrrrrrrr");
+        root.render(
+          <h1 className="text-5xl font-bold text-center">
+            open VPN then try again
+          </h1>
+        );
+      });
   } else {
     console.log("log out");
     store.dispatch(logout());
-    store.dispatch(startSetProjectsAction()).then(() => {
-      renderApp();
-    });
+    store
+      .dispatch(startSetProjectsAction())
+      .then(() => {
+        renderApp();
+      })
+      .catch(() => {
+        console.log("errorrrrrrrrrr");
+        root.render(
+          <h1 className="text-5xl font-bold text-center">
+            open VPN then try again
+          </h1>
+        );
+      });
   }
 });

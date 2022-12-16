@@ -10,6 +10,7 @@ import {
   SiFreelancer,
   SiLinkedin,
   SiFacebook,
+  SiRedux,
 } from "react-icons/si";
 import {FaReact, FaNodeJs} from "react-icons/fa";
 import {DiCss3Full} from "react-icons/di";
@@ -96,6 +97,10 @@ const HomePage = () => {
             <button className="flex gap-2 items-center justify-between w-60 focus:bg-gray-400 focus:text-black focus:translate-x-[-40px] hover:text-black hover:bg-gray-400 p-2 rounded-lg">
               <FaReact />
               <p>React.Js</p>
+            </button>
+            <button className="flex gap-2 items-center justify-between w-60 focus:bg-gray-400 focus:text-black focus:translate-x-[-40px] hover:text-black hover:bg-gray-400 p-2 rounded-lg">
+              <SiRedux />
+              <p>Redux</p>
             </button>
             <button className="flex gap-2 items-center justify-between w-60 focus:bg-gray-400 focus:text-black focus:translate-x-[-40px] hover:text-black hover:bg-gray-400 p-2 rounded-lg">
               <SiTailwindcss />

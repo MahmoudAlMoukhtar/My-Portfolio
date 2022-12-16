@@ -43,6 +43,22 @@ export const startRemoveProjectAction = id => {
       });
   };
 };
+export const editProject = (id, updates) => ({
+  type: "UPDATE_PROJECT",
+  id,
+  updates,
+});
+
+export const startEditProject = (id, updates) => {
+  return dispatch => {
+    return database
+      .ref(`projects/${id}`)
+      .update(updates)
+      .then(() => {
+        dispatch(editProject(id, updates));
+      });
+  };
+};
 
 export const setProjectsAction = projects => ({
   type: "SET_PROJECTS",

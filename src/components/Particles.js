@@ -33,7 +33,7 @@ const ParticlesComponent = () => {
         links: {
           color: "#ffffff",
           distance: 100,
-          enable: false,
+          enable: true,
           opacity: 0.2,
           width: 0.5,
         },
@@ -45,7 +45,7 @@ const ParticlesComponent = () => {
           value: {min: 0.2, max: 0.7},
         },
         size: {
-          value: {min: 1, max: 4},
+          value: {min: 1, max: 3},
         },
       },
     };

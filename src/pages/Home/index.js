@@ -17,8 +17,6 @@ import {IoLogoFirebase} from "react-icons/io5";
 import {GoLocation} from "react-icons/go";
 import {HiOutlineMail} from "react-icons/hi";
 import {HiDevicePhoneMobile} from "react-icons/hi2";
-import {useCallback} from "react";
-import SwiperReact from "../../components/SwiperReact";
 
 const HomePage = () => {
   return (
@@ -36,14 +34,16 @@ const HomePage = () => {
           <div className="w-60 flex flex-col gap-6">
             <h1 className="text-sm text-gray-400">BIOGRAPHY</h1>
             <p className="flex flex-col gap-4">
-              <p>{'" Work for money and experiance\ndevelop for love! "'}</p>
-              I'm Mahmoud, a Frontend Developer on my way to become Fullstack
-              web developer in MERN Stack
+              <p>{'" Work for money and experience\nprogram for love! "'}</p>
+              I'm Mahmoud, a Web Developer with experience in creating and
+              development websites, Who is passionate about programming and
+              works with Frontend Development, I'm on my way to becoming a MEARN
+              Stack developer
             </p>
           </div>
           <div className="w-60 flex flex-col gap-6">
             <h1 className="text-sm text-gray-400">CONTACT</h1>
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 lg:items-start justify-center items-center">
               <div className="flex gap-2 items-center">
                 <GoLocation /> <p>Syria, Damascus</p>
               </div>

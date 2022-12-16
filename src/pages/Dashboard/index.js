@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import {connect} from "react-redux";
 import {
   startAddProjectAction,
@@ -6,14 +6,20 @@ import {
 } from "../../redux/actions/projectsActions";
 import {MdOutlineRemoveCircle} from "react-icons/md";
 import database, {firebase} from "../../firebase/firebase";
+import {Link} from "react-router-dom";
 
 const ItemProjectsDashpoard = ({project, removeProject}) => {
   const {image, title, id} = project;
-  console.log(id);
+  //console.log(id);
   return (
     <div className="flex justify-between items-center">
-      <img src={image} alt="" className="w-40 itemProjects" />
-      <p>{title}</p>
+      <Link
+        to={`/dashboard/edit/${id}`}
+        className="flex justify-between items-center"
+      >
+        <img src={image} alt="" className="w-40 itemProjects" />
+        <p>{title}</p>
+      </Link>
       <button className="p-2" onClick={() => removeProject(id)}>
         <MdOutlineRemoveCircle size={30} />
       </button>
@@ -22,80 +28,19 @@ const ItemProjectsDashpoard = ({project, removeProject}) => {
 };
 
 const DashboardPage = ({projects, addProjectAction, removeProject}) => {
-  const [title, setTitle] = useState();
-  const [discritopn, setDiscription] = useState();
-  const [githubLink, setGithubLink] = useState("");
-  const [demoLink, setDemoLink] = useState("");
-  const [image, setImage] = useState("");
-
   return (
     <div className="flex flex-col gap-16 w-full items-center bg-white text-black z-40 p-8">
-      <button
-        onClick={() => {
-          console.log("logout");
-          firebase.auth().signOut();
-        }}
-      >
-        LOGOUT
-      </button>
-      <form className="flex flex-col gap-4 justify-between items-center text-black">
-        <label className="w-[100%] flex justify-between gap-6 ">
-          Title Project
-          <input
-            type="text"
-            placeholder="Title Project"
-            onChange={e => setTitle(e.target.value)}
-          />
-        </label>
-        <label className="w-[100%] flex justify-between gap-6 ">
-          Demo Url Project
-          <input
-            type="text"
-            placeholder="Demo Url"
-            onChange={e => setDemoLink(e.target.value)}
-          />
-        </label>
-        <label className="w-[100%] flex justify-between gap-6 ">
-          Github Url Project
-          <input
-            type="text"
-            placeholder="Github Url"
-            onChange={e => setGithubLink(e.target.value)}
-          />
-        </label>
-        <label className="w-[100%] flex justify-between gap-6 ">
-          Description Project
-          <input
-            type="text"
-            placeholder="Description Project"
-            onChange={e => setDiscription(e.target.value)}
-          />
-        </label>
-        <label className="w-[100%] flex justify-between gap-6 ">
-          Image url Project
-          <input
-            type="text"
-            placeholder="Image url Project"
-            onChange={e => setImage(e.target.value)}
-          />
-        </label>
+      <nav className="flex justify-between bg-slate-800 text-white w-full gap-20 p-2">
         <button
-          type="submit"
-          onClick={e => {
-            e.preventDefault();
-            addProjectAction({
-              title,
-              discritopn,
-              demoLink,
-              githubLink,
-              image,
-            });
+          onClick={() => {
+            //console.log("logout");
+            firebase.auth().signOut();
           }}
-          className="bg-black py-2 w-full border-2 border-black rounded hover:bg-black hover:text-white"
         >
-          Submit
+          LOGOUT
         </button>
-      </form>
+        <Link to={"/dashbord/add"}>Add Project</Link>
+      </nav>
       <div className="w-[100%] flex flex-col justify-center gap-6">
         <h1 className="text-center">Projects:</h1>
         <div className="flex flex-col gap-6">

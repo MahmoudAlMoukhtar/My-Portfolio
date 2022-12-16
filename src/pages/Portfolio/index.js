@@ -1,7 +1,4 @@
-import database from "../../firebase/firebase";
-import {useEffect, useState} from "react";
 import ItemProjcets from "../../components/ItemProjcets";
-import useFetch from "../../Hooks/useFetch";
 import {connect} from "react-redux";
 import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
 const PortfolioPage = ({projects}) => {

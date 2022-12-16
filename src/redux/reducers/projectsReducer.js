@@ -10,6 +10,14 @@ const projectsReducer = (state = [], action) => {
             })
           : [];
       return projects;
+    case "UPDATE_PROJECT":
+      return state.map(p => {
+        if (p.id === action.id) {
+          return {...p, ...action.updates};
+        } else {
+          return p;
+        }
+      });
     case "SET_PROJECTS":
       return action.projects;
     default:

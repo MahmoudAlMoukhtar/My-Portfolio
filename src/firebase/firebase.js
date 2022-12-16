@@ -10,18 +10,11 @@ const firebaseConfig = {
   messagingSenderId: "46285179731",
   appId: "1:46285179731:web:9eda60e7cd95fd5b84efa6",
 };
-
 firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
 const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 export {firebase, googleAuthProvider, database as default};
-/* database.ref("").push({
-  image: "/calendar.png",
-  description: "klasjfdlkhloremasdafdassghyths",
-  githubLink: "klasjfdlkhloremasdafdassghyths",
-  demoLink: "klasjfdlkhloremasdafdassghyths",
-});
- */
+
 /* database.ref("projects").push({
   image: "/Notes.png",
   title: "Notes-javaScript-app",

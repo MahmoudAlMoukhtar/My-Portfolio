@@ -39,7 +39,7 @@ const DashboardPage = ({projects, addProjectAction, removeProject}) => {
         >
           LOGOUT
         </button>
-        <Link to={"/dashbord/add"}>Add Project</Link>
+        <Link to={"/dashboard/add"}>Add Project</Link>
       </nav>
       <div className="w-[100%] flex flex-col justify-center gap-6">
         <h1 className="text-center">Projects:</h1>

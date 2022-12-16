@@ -77,7 +77,6 @@ const ProjectForm = ({onSubmit, project}) => {
             githubLink,
             image,
           });
-          navigate("/dashboard");
         }}
         className="bg-black py-2 w-full border-2 border-black rounded hover:bg-black hover:text-white z-40"
       >

@@ -8,10 +8,9 @@ import configureStore from "./redux/store/configuerStore";
 import {startSetProjectsAction} from "./redux/actions/projectsActions";
 import {Provider} from "react-redux";
 import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
-import ParticlesComponent from "./components/Particles";
-import {firebase} from "./firebase/firebase";
+import database, {firebase} from "./firebase/firebase";
 import {login, logout} from "./redux/actions/auth";
-
+import "./firebase/firebase";
 const store = configureStore();
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -20,7 +19,6 @@ root.render(
     <div className="absolute inset-0 mx-[50%] flex items-center justify-cneter">
       <ClimbingBoxLoader />
     </div>
-    <ParticlesComponent />
   </React.Fragment>
 );
 /* store.dispatch(startSetProjectsAction()).then(() => {
@@ -63,6 +61,8 @@ firebase.auth().onAuthStateChanged(user => {
   } else {
     console.log("log out");
     store.dispatch(logout());
-    renderApp();
+    store.dispatch(startSetProjectsAction()).then(() => {
+      renderApp();
+    });
   }
 });

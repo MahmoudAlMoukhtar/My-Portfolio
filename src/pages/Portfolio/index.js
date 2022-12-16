@@ -3,13 +3,7 @@ import {connect} from "react-redux";
 import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
 const PortfolioPage = ({projects}) => {
   //const {data: projectsData} = useFetch("projects");
-  if (projects.length === 0 || null || undefined) {
-    return (
-      <div className="absolute inset-0 mx-[50%] flex items-center justify-cneter">
-        <ClimbingBoxLoader />
-      </div>
-    );
-  }
+
   return (
     <div className="flex flex-col justify-center items-center gap-8 h-[100%]">
       <h1 className="text-4xl">PROJECTS</h1>

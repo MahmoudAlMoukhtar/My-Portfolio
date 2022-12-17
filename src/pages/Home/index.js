@@ -18,7 +18,9 @@ import {IoLogoFirebase} from "react-icons/io5";
 import {GoLocation} from "react-icons/go";
 import {HiOutlineMail} from "react-icons/hi";
 import {HiDevicePhoneMobile} from "react-icons/hi2";
-
+import PortfolioPage from "../Portfolio/index";
+import CertificatesPage from "../Certificates";
+import {NavLink} from "react-router-dom";
 const HomePage = () => {
   return (
     <div className="flex flex-col gap-8 items-center pb-20 w-[100%]">
@@ -162,6 +164,18 @@ const HomePage = () => {
           size={50}
           className="hover:scale-110 transition duration-100 cursor-pointer"
         />
+      </div>
+      <div className="flex flex-col items-center justify-center gap-6 mt-40">
+        <PortfolioPage numSlice={3} />
+        <NavLink
+          className="text-black font-semibold sm:font-bold bg-gray-400 rounded sm:px-4 sm:py-2  px-2"
+          to="/portfolio"
+        >
+          View more
+        </NavLink>
+      </div>
+      <div className="mt-40">
+        <CertificatesPage />
       </div>
     </div>
   );

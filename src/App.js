@@ -8,6 +8,7 @@ import PrivaiteRoute from "./PrivaiteRoute";
 import LoginPage from "./pages/Login/index";
 import EditPage from "./pages/EditPage";
 import AddProject from "./pages/AddProject";
+import CertificatesPage from "./pages/Certificates";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/portfolio" element={<PortfolioPage />} />
+          <Route path="/certificates" element={<CertificatesPage />} />
           <Route path="/Login" element={<LoginPage />} />
           <Route
             path="/dashboard"

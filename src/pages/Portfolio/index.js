@@ -2,9 +2,12 @@ import database from "../../firebase/firebase";
 import ItemProjcets from "../../components/ItemProjcets";
 import {connect} from "react-redux";
 import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
-const PortfolioPage = ({projects}) => {
+const PortfolioPage = ({projects, numSlice}) => {
   //const {data: projectsData} = useFetch("projects");
   console.log(projects);
+  const projectsAfterSlice = numSlice
+    ? projects.slice(0, numSlice)
+    : projects.reverse();
   if (projects.length === 0 || null || undefined) {
     return (
       <div className="absolute inset-0 mx-[50%] flex items-center justify-cneter">
@@ -17,7 +20,7 @@ const PortfolioPage = ({projects}) => {
       <h1 className="text-4xl">PROJECTS</h1>
 
       <div className="flex justify-center items-center flex-wrap gap-20">
-        {projects.map(p => (
+        {projectsAfterSlice.map(p => (
           <ItemProjcets p={p} key={p.id} />
         ))}
       </div>

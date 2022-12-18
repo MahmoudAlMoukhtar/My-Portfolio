@@ -37,7 +37,6 @@ const HomePage = () => {
           <div className="w-60 flex flex-col gap-6">
             <h1 className="text-sm text-gray-400">BIOGRAPHY</h1>
             <p className="flex flex-col gap-4">
-              <p>{'" Work for money and experience\nprogram for love! "'}</p>
               I'm Mahmoud, a Web Developer with experience in creating and
               development websites, Who is passionate about programming and
               works with Frontend Development, I'm on my way to becoming a MEARN

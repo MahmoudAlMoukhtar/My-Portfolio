@@ -6,7 +6,7 @@ const PortfolioPage = ({projects, numSlice}) => {
   //const {data: projectsData} = useFetch("projects");
   //console.log(projects);
   const projectsAfterSlice = numSlice
-    ? projects.slice(0, numSlice)
+    ? projects.reverse().slice(0, numSlice)
     : projects.reverse();
   if (projects.length === 0 || null || undefined) {
     return (

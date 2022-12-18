@@ -4,7 +4,7 @@ import {connect} from "react-redux";
 import ClimbingBoxLoader from "react-spinners/ClimbingBoxLoader";
 const PortfolioPage = ({projects, numSlice}) => {
   //const {data: projectsData} = useFetch("projects");
-  console.log(projects);
+  //console.log(projects);
   const projectsAfterSlice = numSlice
     ? projects.slice(0, numSlice)
     : projects.reverse();

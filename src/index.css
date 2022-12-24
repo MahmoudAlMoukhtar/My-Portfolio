@@ -20,15 +20,15 @@ box-shadow: inset 20px 20px 20px rgba(0, 0, 0, 0.05),
 25px 35px 20px rgba(0, 0, 0, 0.05),
 25px 30px 30px rgba(0, 0, 0, 0.05),
 inset -10px -20px 25px rgba(16, 17, 20, 0.9);
-border-radius: 39% 61% 29% 71% / 55% 29% 71% 45%;
-transition: 2s;
+border-radius: 25% 75% 17% 83% / 65% 23% 77% 35%;
+transition: 1s;
 }
 .drop:hover{
 border-radius: 50%}
 
 .imgDrop{
-  border-radius: 39% 61% 29% 71% / 55% 29% 71% 45%;
-  transition: 2s;
+  border-radius: 25% 75% 17% 83% / 65% 23% 77% 35%;
+  transition: 1s;
 }
 .imgDrop:hover{
   border-radius: 50%;
@@ -40,7 +40,7 @@ border-radius: 50%}
       25px 30px 30px rgba(0, 0, 0, 0.05),
       inset -20px -20px 25px rgba(16, 17, 20, 0.9);
   border-radius: 45% 55% 31% 69% / 40% 25% 75% 60%;
-  transition: 1s;
+  transition: 2s;
 }
 
 .itemProjects:hover {

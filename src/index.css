@@ -20,14 +20,14 @@ box-shadow: inset 20px 20px 20px rgba(0, 0, 0, 0.05),
 25px 35px 20px rgba(0, 0, 0, 0.05),
 25px 30px 30px rgba(0, 0, 0, 0.05),
 inset -10px -20px 25px rgba(16, 17, 20, 0.9);
-border-radius: 66% 34% 42% 58% / 46% 56% 44% 54%;
+border-radius: 45% 55% 42% 58% / 51% 33% 67% 49%;
 transition: 1s;
 }
 .drop:hover{
 border-radius: 50%}
 
 .imgDrop{
-  border-radius: 66% 34% 42% 58% / 46% 56% 44% 54%;
+  border-radius: 45% 55% 42% 58% / 51% 33% 67% 49%;
   transition: 1s;
 }
 .imgDrop:hover{
